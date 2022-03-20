@@ -1,14 +1,11 @@
-document.getElementById(`submit`).addEventListener(`click`, function(){
-    //var img = new Image();
-    //img.src = `pix/man.jpg`;
-    //var img2 = new Image();
-    //img2.src = `pix/woman.png`;
-    var imgPlace= document.getElementById(`placeholder`);
+document.getElementById(`myFile`).disabled = true;
 
+document.getElementById(`submit`).addEventListener(`click`, function(){
+    var imgPlace= document.getElementById(`placeholder`);
+    
     if (document.getElementById(`man`).checked === true && (document.getElementById(`name`).value !== `` && document.getElementById(`name`).value !== `Name`) && (document.getElementById(`food`).value !== `` && document.getElementById(`food`).value !== `Favorite Food`)){
-        //imgPlace.parentNode.removeChild(imgPlace);
+        document.getElementById(`myFile`).disabled = false;
         imgPlace.src = `pix/man.jpg`;
-        //document.getElementById(`picOut`).appendChild(img);
         imgPlace.alt = `Generic Man`;
         imgPlace.width = `300`;
         imgPlace.height = `300`;
@@ -18,9 +15,8 @@ document.getElementById(`submit`).addEventListener(`click`, function(){
     } 
     
     else if (document.getElementById(`woman`).checked === true && (document.getElementById(`name`).value !== `` && document.getElementById(`name`).value !== `Name`) && (document.getElementById(`food`).value !== `` && document.getElementById(`food`).value !== `Favorite Food`)){
-        //imgPlace.parentNode.removeChild(imgPlace);
+        document.getElementById(`myFile`).disabled = false;
         imgPlace.src = `pix/woman.png`;
-        //document.getElementById(`placeholder`).appendChild(img2);
         imgPlace.alt = `Generic Woman`;
         document.getElementById(`man`).disabled = true;
         imgPlace.width = `300`;
@@ -28,6 +24,9 @@ document.getElementById(`submit`).addEventListener(`click`, function(){
         document.getElementById(`man`).disabled = true;
         document.getElementById(`nameOut`).innerHTML = `Name: ` + document.getElementById(`name`).value;
         document.getElementById(`foodOut`).innerHTML = `Favorite Food: ` + document.getElementById(`food`).value;
+    }
+    else if ((document.getElementById(`woman`).checked !== true && document.getElementById(`man`).checked !== true) || (document.getElementById(`name`).value === `` || document.getElementById(`name`).value === `Name`) || (document.getElementById(`food`).value === `` || document.getElementById(`food`).value === `Favorite Food`)){
+        alert(`You must complete your profile before submitting!`);
     }
 });
 
