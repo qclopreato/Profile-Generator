@@ -1,3 +1,32 @@
 body {
   background-color: rgb(167, 167, 252);
+  text-align: center;
+}
+
+#name {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#food {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myFile {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#custom {
+  margin: 10px;
 }
